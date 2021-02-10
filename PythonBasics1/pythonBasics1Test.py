@@ -1,4 +1,3 @@
-
 import pythonBasics1
 # main() is already set up to call the functions
 # we want to test with a few different inputs,
@@ -6,12 +5,14 @@ import pythonBasics1
 # the simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
     else:
         prefix = '  X '
-    print ('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
+    print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
+
 
 # Calls the functions in pythonBasics1 with interesting inputs.
 def main():
