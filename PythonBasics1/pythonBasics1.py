@@ -44,6 +44,14 @@ def is_power_of(i,j):
 # if 2 or more words are tied as longest then return the one that occurs LAST in the sentence
 # if s is an empty string return an empty string
 def longest_word(s):
-  # YOUR CODE HERE
+  start = 0
+  return_string = ""
 
-  return
+  if s == "":
+    return s
+
+  for word in s.split():
+    if len(word) >= len(return_string):
+      return_string = word
+
+  return return_string
