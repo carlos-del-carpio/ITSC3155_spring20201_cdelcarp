@@ -47,11 +47,7 @@ def longest_consecutive_repeating_char(s):
     if current_count >= repeating_count:
       repeating_letter = current_letter
       repeating_count = current_count
-  return  repeating_letter
-
-
-
-  return
+  return repeating_letter
 
 
 # Part C. is_palindrome
@@ -61,6 +57,9 @@ def longest_consecutive_repeating_char(s):
 # forwards. Treat capital letters the same as lowercase ones
 # and ignore spaces (i.e. case insensitive).
 def is_palindrome(s):
-  # YOUR CODE HERE
+  string = s.upper().replace(' ', '')
 
-  return
+  for index in range(len(string)):
+    if (string[index] != string[len(string) - 1 - index]):
+      return False
+  return True
