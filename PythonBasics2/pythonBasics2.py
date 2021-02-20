@@ -11,16 +11,45 @@
 # to n (including n).
 
 def count_threes(n):
-  # YOUR CODE HERE
+  count = 0
+  if (n > 0):
+    for num in range(1, n + 1):
+      if num % 3 == 0:
+        count += 1
 
-  return
+  return count
 
 
 # Part B. longest_consecutive_repeating_char
 # Define a function longest_consecutive_repeating_char(s) that takes
 # a string s and returns the character that has the longest consecutive repeat.
 def longest_consecutive_repeating_char(s):
-  # YOUR CODE HERE
+  repeating_letter = ""
+  repeating_count = 0
+  current_letter = ""
+  current_count = 0
+  for letter in s:
+    if repeating_letter == "":
+      repeating_letter = letter
+      repeating_count += 1
+      current_letter = letter
+      current_count + 1
+
+    if letter == current_letter:
+      current_count += 1
+    else:
+      if current_count >= repeating_count:
+        repeating_letter = current_letter
+        repeating_count = current_count
+      current_letter = letter
+      current_count = 1
+
+    if current_count >= repeating_count:
+      repeating_letter = current_letter
+      repeating_count = current_count
+  return  repeating_letter
+
+
 
   return
 
