@@ -40,15 +40,15 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.ends_with_number("How many people does it take to change a light bulb? 1"), True)
 
-    # # Test case for binary_multiple_of_6
-    # def test_binary_multiple_of_6(self):
-    #     self.assertEqual(pythonBasics3.binary_multiple_of_6("100101"), False)
-    #
-    #     self.assertEqual(pythonBasics3.binary_multiple_of_6("110"), True)
-    #
-    #     self.assertEqual(pythonBasics3.binary_multiple_of_6("111111"), False)
-    #
-    #     self.assertEqual(pythonBasics3.binary_multiple_of_6("3"), False)
+    # Test case for binary_multiple_of_6
+    def test_binary_multiple_of_6(self):
+        self.assertEqual(pythonBasics3.binary_multiple_of_6("100101"), False)
+
+        self.assertEqual(pythonBasics3.binary_multiple_of_6("110"), True)
+
+        self.assertEqual(pythonBasics3.binary_multiple_of_6("111111"), False)
+
+        self.assertEqual(pythonBasics3.binary_multiple_of_6("3"), False)
 
 
 if __name__ == '__main__':
