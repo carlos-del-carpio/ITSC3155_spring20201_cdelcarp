@@ -5,10 +5,9 @@
 # which is just a placeholder for your code. Make sure to add what is going to be returned.
 
 
-# Part A. count_threes
-# Define a function count_threes(n) that takes an int and
-# returns the number of multiples of 3 in the range from 0
-# to n (including n).
+#Part A (count_threes) now needs to return the multiple of three that occurs the most in a string.
+# For example, 0939639 would return 9 since it appeared 3 times while the other multiple of three appeared less than that.
+# You only need to worry about single digit multiples of 3 (3, 6, 9). You must use a dictionary to accomplish this.
 
 def count_threes(n):
     dictionary = {}
@@ -16,9 +15,10 @@ def count_threes(n):
     returnNum = ""
 
     for num in n:
-        if num not in dictionary:
-            dictionary[num] = 0
-        dictionary[num] += 1
+        if int(num) % 3 == 0:
+            if num not in dictionary:
+                dictionary[num] = 0
+            dictionary[num] += 1
 
     for key in dictionary:
         if dictionary[key] > highest_count:
@@ -28,33 +28,12 @@ def count_threes(n):
     return int(returnNum)
 
 
-# Part B. longest_consecutive_repeating_char
-# Define a function longest_consecutive_repeating_char(s) that takes
-# a string s and returns the character that has the longest consecutive repeat.
+#Part B (longest_consecutive_repeating_char) now needs to account for the edge case where two characters have the same
+# consecutive repeat length. The return value should now be a list containing all characters with the longest
+# consecutive repeat. For example, the longest_consecutive_repeating_char('aabbccd') would return ['a', 'b', 'c']
+# (order doesn't matter). You must use a dictionary to accomplish this.
+
 def longest_consecutive_repeating_char(s):
-    # repeating_letter = ""
-    # repeating_count = 0
-    # current_letter = ""
-    # current_count = 0
-    # for letter in s:
-    #     if repeating_letter == "":
-    #         repeating_letter = letter
-    #         repeating_count += 1
-    #         current_letter = letter
-    #         current_count + 1
-    #
-    #     if letter == current_letter:
-    #         current_count += 1
-    #     else:
-    #         if current_count >= repeating_count:
-    #             repeating_letter = current_letter
-    #             repeating_count = current_count
-    #         current_letter = letter
-    #         current_count = 1
-    #
-    #     if current_count >= repeating_count:
-    #         repeating_letter = current_letter
-    #         repeating_count = current_count
     dictionary = {}
     returning_list = []
     previous_letter = ""
