@@ -4,8 +4,22 @@ from flask import Flask  # Flask is the web app that we will customize
 from flask import render_template
 from flask import request
 from flask import redirect, url_for
+from database import db
 
 app = Flask(__name__)  # create an app
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask_note_app.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
+#  Bind SQLAlchemy db object to this Flask app
+db.init_app(app)
+
+
+# Setup models
+with app.app_context():
+    db.create_all()   # run under the app context
 
 
 notes = {1: {'title': 'First note', 'text': 'This is my first note', 'date': '10-01-2020'},
