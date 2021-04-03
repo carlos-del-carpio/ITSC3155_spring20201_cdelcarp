@@ -70,10 +70,17 @@ def new_note():
         return render_template('new.html', user=a_user)
 
 
-app.run(host=os.getenv('IP', '127.0.0.1'), port=int(os.getenv('PORT', 5000)), debug=True)
+@app.route('/notes/edit/<note_id>')
+def update_note(note_id):
+    a_user = db.session.query(User).filter_by(email='cdelcarp@uncc.edu').one()
+    my_note = db.session.query(Note).filter_by(id=note_id).one()
+    return render_template('new.html', note=my_note, user=a_user)
+
+
+app.run(host=os.getenv('IP', '127.0.0.1'), port=int(os.getenv('PORT', 5001)), debug=True)
 
 # To see the web page in your web browser, go to the url,
-#   http://127.0.0.1:5000
+#   http://127.0.0.1:5001
 
 # Note that we are running with "debug=True", so if you make changes and save it
 # the server will automatically update. This is great for development but is a
